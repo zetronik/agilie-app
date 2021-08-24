@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {AuthService} from './service/auth.service'
-import {SearchService} from './service/search.service'
+import { AuthService } from './service/auth.service';
+import { SearchService } from './service/search.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +15,7 @@ import {SearchService} from './service/search.service'
     AppRoutingModule
   ],
   providers: [AuthService, SearchService],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

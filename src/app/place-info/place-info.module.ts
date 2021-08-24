@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { PlaceInfoRoutingModule } from './place-info-routing.module';
 import { PlaceInfoComponent } from './place-info.component';
+import { SpinnerComponent } from '../ui/spinner/spinner.component'
 
 
 @NgModule({
   declarations: [
-    PlaceInfoComponent
+    PlaceInfoComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,

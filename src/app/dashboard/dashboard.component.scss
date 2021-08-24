@@ -1,0 +1,83 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+$height: 65vh;
+
+@mixin markup {
+  width: 50%;
+  height: 100vh;
+}
+
+@mixin font-size {
+  font-size: 1.2rem;
+}
+
+.search-container {
+  width: 300px;
+  height: $height;
+  position: relative;
+}
+
+.input {
+  @include font-size;
+  width: calc(100% - 4px);
+  height: 2rem;
+}
+
+.list {
+  width: 100%;
+  height: $height * 0.7;
+  list-style: none;
+  padding: 0;
+  border: 1px solid #000000;
+  overflow: auto;
+  scroll-behavior: auto;
+  transition: 0.3s;
+
+  & li {
+    @include font-size;
+    padding: 7px 5px;
+    border-bottom: 1px solid #000000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: gray;
+    }
+
+    &.active {
+      background-color: aqua;
+    }
+  }
+}
+
+.button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px 25px;
+}
+
+.dashboard {
+  @include markup;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  @include markup;
+}
+
+@media (max-width: 625px) {
+  .image {
+    width: 100%;
+  }
+
+  .dashboard {
+    width: 100%;
+  }
+}
