@@ -1,1 +1,35 @@
-<p>register works!</p>
+<div class="form-wrap">
+  <h1>Registration</h1>
+  <form class="form-group" [formGroup]="registrationForm" (submit)="submit()">
+
+    <div class="form-input">
+      <input type="email" formControlName="email" placeholder="Email" required>
+      <span *ngIf="email.invalid && email.touched && email.errors?.email">
+        Email is required
+      </span>
+    </div>
+
+    <div class="form-input">
+      <input type="password" formControlName="password" placeholder="Password" required>
+      <span *ngIf="password.invalid && confirm.touched">
+        Password is required
+      </span>
+    </div>
+
+    <div class="form-input">
+      <input type="password" formControlName="confirm" placeholder="Confirm password" required>
+      <span *ngIf="confirm.invalid && confirm.touched">
+        Confirmation does not match password
+      </span>
+    </div>
+
+    <div class="form-checkbox">
+      <input type="checkbox" formControlName="conditions"><span>I agree to Terms and Conditions</span>
+    </div>
+
+    <button class="form-button" [disabled]="registrationForm.invalid">SUBMIT</button>
+  </form>
+</div>
+<div class="image">
+
+</div>

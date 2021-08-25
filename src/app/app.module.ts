@@ -12,7 +12,7 @@ import { SearchService } from './service/search.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [AuthService, SearchService],
   exports: [],

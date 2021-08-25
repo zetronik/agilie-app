@@ -13,10 +13,6 @@ export class DashboardComponent implements OnInit {
   public data: SearchResponse[] = []
   public select: SearchResponse | undefined
   public searchStorage: SearchResponse[] = []
-  public mapOptions: google.maps.MapOptions = {
-    center: { lat: 48.4593, lng: 35.03865 },
-    zoom : 10
-  }
 
   constructor(private searchService: SearchService, private router: Router) {
     if (localStorage.searchItems) {
@@ -34,13 +30,14 @@ export class DashboardComponent implements OnInit {
 
   public selectItem(item: SearchResponse) {
     this.select = item
-    this.mapOptions.center = {...item._geoloc}
     this.saveStorage(item)
   }
 
   public submit() {
     if (this.select) {
       this.router.navigate(['info'], {queryParams: {id: this.select.objectID}})
+    } else {
+      window.alert('Choose Location')
     }
   }
 

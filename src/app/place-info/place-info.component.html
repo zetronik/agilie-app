@@ -18,7 +18,7 @@
     <li>country: {{data?.country?.default}}</li>
     <li>county: {{data?.county?.default}}</li>
     <li>population: {{data?.population}}</li>
-    <li>geoloc: lat: {{data?._geoloc?.lat}} / lng: {{data?._geoloc?.lng}}</li>
+    <li *ngIf="data._geoloc">geoloc: lat: {{data?._geoloc?.lat}} / lng: {{data?._geoloc?.lng}}</li>
   </ul>
 </div>
 
