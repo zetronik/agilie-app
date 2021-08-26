@@ -4,21 +4,21 @@
 
     <div class="form-input">
       <input type="email" formControlName="email" placeholder="Email" required>
-      <span *ngIf="email.invalid && email.touched && email.errors?.email">
+      <span *ngIf="email.invalid && email.touched && email.errors">
         Email is required
       </span>
     </div>
 
     <div class="form-input">
       <input type="password" formControlName="password" placeholder="Password" required>
-      <span *ngIf="password.invalid && confirm.touched">
+      <span *ngIf="password.invalid && password.touched && password.errors">
         Password is required
       </span>
     </div>
 
     <div class="form-input">
       <input type="password" formControlName="confirm" placeholder="Confirm password" required>
-      <span *ngIf="confirm.invalid && confirm.touched">
+      <span *ngIf="confirm.invalid && confirm.touched && confirm.errors">
         Confirmation does not match password
       </span>
     </div>
@@ -27,7 +27,7 @@
       <input type="checkbox" formControlName="conditions"><span>I agree to Terms and Conditions</span>
     </div>
 
-    <button class="form-button" [disabled]="registrationForm.invalid">SUBMIT</button>
+    <button class="form-button" [disabled]="buttonSubmit">SUBMIT</button>
   </form>
 </div>
 <div class="image">
