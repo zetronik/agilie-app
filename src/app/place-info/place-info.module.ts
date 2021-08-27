@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { PlaceInfoRoutingModule } from './place-info-routing.module';
 import { PlaceInfoComponent } from './place-info.component';
 import { SpinnerComponent } from '../ui/spinner/spinner.component'
+import {HTTP_INTERCEPTORS} from '@angular/common/http'
+import {AuthInterceptor} from '../interceptor/auth.interceptor'
 
 
 @NgModule({
@@ -14,6 +16,7 @@ import { SpinnerComponent } from '../ui/spinner/spinner.component'
   imports: [
     CommonModule,
     PlaceInfoRoutingModule
-  ]
+  ],
+  providers: []
 })
 export class PlaceInfoModule { }

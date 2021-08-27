@@ -5,9 +5,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './service/auth.service';
-import { SearchService } from './service/search.service';
-import { UserInterceptor } from './interceptor/user.interceptor';
-import {PasswordInterceptor} from './interceptor/password.interceptor'
+import { ApiService } from './service/api.service';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,9 +19,8 @@ import {PasswordInterceptor} from './interceptor/password.interceptor'
   ],
   providers: [
     AuthService,
-    SearchService,
-    { provide: HTTP_INTERCEPTORS, useClass: UserInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: PasswordInterceptor, multi: true }
+    ApiService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

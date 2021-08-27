@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SearchService} from '../service/search.service'
+import {ApiService} from '../service/api.service'
 import {SearchResponse} from '../interface/search-response'
 import {Router} from '@angular/router'
 
@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   public select: SearchResponse | undefined
   public searchStorage: SearchResponse[] = []
 
-  constructor(private searchService: SearchService, private router: Router) {
+  constructor(private searchService: ApiService, private router: Router) {
     if (localStorage.searchItems) {
       this.searchStorage = JSON.parse(localStorage.searchItems) as SearchResponse[]
     }

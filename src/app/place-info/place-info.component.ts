@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'
-import {SearchService} from '../service/search.service'
+import {ApiService} from '../service/api.service'
 import {SearchResponse} from '../interface/search-response'
 
 @Component({
@@ -15,7 +15,7 @@ export class PlaceInfoComponent implements OnInit {
 
   private id: string = ''
 
-  constructor(private searchService: SearchService, private route: ActivatedRoute) {
+  constructor(private searchService: ApiService, private route: ActivatedRoute) {
     route.queryParams.subscribe(params => this.id = params.id)
   }
 

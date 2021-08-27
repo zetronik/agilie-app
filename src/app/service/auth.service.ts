@@ -18,4 +18,8 @@ export class AuthService {
       map(data => this.auth = data.email === 'mail@mail.com' && data.password === '123456' && data.conditions)
     )
   }
+
+  public isAuth(): boolean {
+    return this.auth
+  }
 }
