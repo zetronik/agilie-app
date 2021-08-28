@@ -4,14 +4,18 @@
 
   <div class="search-container">
 
-    <input
-      type="text"
-      class="input"
-      placeholder="Search location"
-      (input)="getCity($event)"
-    >
+    <div class="form-input-group input">
+      <input
+        type="text"
+        (input)="getCity($event)"
+      >
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Search location</label>
+    </div>
 
-    <ul class="list" *ngIf="data.length">
+
+    <ul class="card list" *ngIf="data.length">
       <li
         *ngFor="let item of data"
         (click)="selectItem(item)"
@@ -21,11 +25,11 @@
       </li>
     </ul>
 
-    <button class="button" (click)="submit()" [disabled]="!data.length">Submit</button>
+    <button class="button button-position" (click)="submit()" [disabled]="!data.length">Submit</button>
 
   </div>
 
 </div>
 
-<div class="image">
+<div class="image container-bg">
 </div>

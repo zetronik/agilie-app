@@ -21,8 +21,6 @@ $height: 65vh;
 }
 
 .input {
-  @include font-size;
-  width: calc(100% - 4px);
   height: 2rem;
 }
 
@@ -31,7 +29,6 @@ $height: 65vh;
   height: $height * 0.7;
   list-style: none;
   padding: 0;
-  border: 1px solid #000000;
   overflow: auto;
   scroll-behavior: auto;
   transition: 0.3s;
@@ -53,13 +50,6 @@ $height: 65vh;
   }
 }
 
-.button {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 5px 25px;
-}
-
 .dashboard {
   @include markup;
   display: flex;
@@ -73,11 +63,11 @@ $height: 65vh;
 }
 
 @media (max-width: 625px) {
-  .image {
+  .dashboard {
     width: 100%;
   }
 
-  .dashboard {
-    width: 100%;
+  .image {
+    display: none;
   }
 }

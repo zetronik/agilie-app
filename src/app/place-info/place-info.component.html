@@ -6,13 +6,13 @@
   <button
     (click)="submit()"
     [disabled]="data"
-    class="bottom"
+    class="button"
   >
     Get Information
   </button>
 </div>
 <div class="info">
-  <ul *ngIf="data" class="list">
+  <ul *ngIf="data" class="card list">
     <li>name: {{data?.locale_names?.default}}</li>
     <li>administrative: {{data?.administrative}}</li>
     <li>country: {{data?.country?.default}}</li>

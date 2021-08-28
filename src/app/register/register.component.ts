@@ -18,9 +18,9 @@ export class RegisterComponent implements OnInit {
   public conditions: FormControl
 
   constructor(private authService: AuthService, private router: Router) {
-    this.email = new FormControl(null, [Validators.required, Validators.email])
-    this.password = new FormControl(null, [Validators.required, Validators.pattern(/(?!.*(.)\1)^(?:[A-Za-z0-9])/)])
-    this.confirm = new FormControl(null, [Validators.required, Validators.pattern(/(?!.*(.)\1)^(?:[A-Za-z0-9])/)])
+    this.email = new FormControl('mail@mail.com', [Validators.required, Validators.email])
+    this.password = new FormControl('123456', [Validators.required, Validators.pattern(/(?!.*(.)\1)^(?:[A-Za-z0-9])/)])
+    this.confirm = new FormControl('123456', [Validators.required, Validators.pattern(/(?!.*(.)\1)^(?:[A-Za-z0-9])/)])
     this.conditions = new FormControl(false, [Validators.requiredTrue])
 
     this.registrationForm = new FormGroup({

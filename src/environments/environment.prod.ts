@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  url: 'https://places-dsn.algolia.net/1/places/'
 };

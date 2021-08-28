@@ -2,34 +2,57 @@
   <h1>Registration</h1>
   <form class="form-group" [formGroup]="registrationForm" (submit)="submit()">
 
-    <div class="form-input">
-      <input type="email" formControlName="email" placeholder="Email" required>
-      <span *ngIf="email.invalid && email.touched && email.errors">
+    <div class="form-input-group">
+      <input type="text" formControlName="email" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Email</label>
+      <span
+        class="error-message"
+        *ngIf="email.invalid && email.touched && email.errors"
+      >
         Email is required
       </span>
     </div>
 
-    <div class="form-input">
-      <input type="password" formControlName="password" placeholder="Password" required>
-      <span *ngIf="password.invalid && password.touched && password.errors">
+    <div class="form-input-group">
+      <input type="password" formControlName="password" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Password</label>
+      <span
+        class="error-message"
+        *ngIf="password.invalid && password.touched && password.errors"
+      >
         Password is required
       </span>
     </div>
 
-    <div class="form-input">
-      <input type="password" formControlName="confirm" placeholder="Confirm password" required>
-      <span *ngIf="confirm.invalid && confirm.touched && confirm.errors">
+    <div class="form-input-group">
+      <input type="password" formControlName="confirm" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Confirm password</label>
+      <span
+        class="error-message"
+        *ngIf="confirm.invalid && confirm.touched && confirm.errors"
+      >
         Confirmation does not match password
       </span>
     </div>
 
     <div class="form-checkbox">
-      <input type="checkbox" formControlName="conditions"><span>I agree to Terms and Conditions</span>
+      <input type="checkbox" formControlName="conditions">
+      <span
+        [class.error-message]="conditions.errors && conditions.touched"
+      >
+        I agree to Terms and Conditions
+      </span>
     </div>
 
-    <button class="form-button" [disabled]="buttonSubmit">SUBMIT</button>
+    <button class="button button-position" [disabled]="buttonSubmit">SUBMIT</button>
   </form>
 </div>
-<div class="image">
+<div class="image container-bg">
 
 </div>
